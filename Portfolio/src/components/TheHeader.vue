@@ -13,7 +13,7 @@ const props = defineProps ({
         <p class="header__title">Barbod <span class="header__title--accent-color">Garshasbi</span></p>
         <div class="header__nav">
             <p class="header__nav__itm">About</p>
-            <p class="header__nav__itm">Projects</p>
+            <p onclick="window.location='#projects'" class="header__nav__itm">Projects</p>
             <p class="header__nav__itm">Contacts</p>
         </div>
     </header>
@@ -56,6 +56,11 @@ const props = defineProps ({
             font-size: 1.2rem;
             font-weight: 200;
             margin-left:  6rem;
+
+            transition-duration: 300ms;
+        }
+        .header__nav__itm:hover {
+            transform: translateY(-.2rem );
         }
     }
 }

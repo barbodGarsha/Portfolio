@@ -8,13 +8,20 @@ const props = defineProps({
     image: {
         default: null,
         type: Image
+    },
+    href: {
+        default: '',
+        type: String
     }
 })
 
+function clicked() {
+    window.location.href=props.href
+}
 </script>
 
 <template>
-    <div class="card">
+    <div @click="clicked" class="card">
         <img :src="props.image" alt="background image" class="card__background">
         <p class="card__title">{{ props.title }}</p>
     </div>
@@ -28,6 +35,8 @@ const props = defineProps({
         width: 30%;
         height: 30vh;
         border-radius: 12px;
+
+        transition-duration: 300ms;
 
 
         .card__background {
@@ -57,5 +66,8 @@ const props = defineProps({
 
             
         }
+    }
+    .card:hover {
+        scale: 1.05;
     }
 </style>

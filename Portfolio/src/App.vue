@@ -2,6 +2,7 @@
 
 import TheHeader from '@/components/TheHeader.vue'
 import PostCard from '@/components/ProjectCard.vue'
+import Overlay from '@/components/Overlay.vue'
 
 import projectPicWordle from '@/assets/Projects/wordle-screenshot.png'
 import projectPicCafeLotte from '@/assets/Projects/Cafe Lotte Screenshot.png'
@@ -11,6 +12,19 @@ import projectPicEplodedView from '@/assets/Projects/Exploded View Screenshot.pn
 import projectPicGalleryVJ from '@/assets/Projects/Gallery Website homepage Screeshot.png'
 import projectPicGalleryReact from '@/assets/Projects/Gallery Website Screeshot.png'
 import projectPicTODOs from '@/assets/Projects/TODOs Screenshot.png'
+import projectPicPS from '@/assets/Projects/ps-screenshot.png'
+import projectPicOldPortfolio from '@/assets/Projects/old-portfolio-screenshot.png'
+import projectPicDPLP from '@/assets/Projects/dp-lp-screenshot.png'
+import projectPicAdviceGen from '@/assets/Projects/advice-generator-app.png'
+import projectPicICDF from '@/assets/Projects/interactive-card-details-form.png'
+
+
+import componentPicIR from '@/assets/Projects/interactive-rating.png'
+import componentPicDS from '@/assets/Projects/fylo-data-storage.png'
+import componentPicProductPre from '@/assets/Projects/product-preview-card.png'
+import componentPicPricing from '@/assets/Projects/pricing-component-with-toggle.png'
+
+
 </script>
 
 <template>
@@ -27,30 +41,55 @@ import projectPicTODOs from '@/assets/Projects/TODOs Screenshot.png'
           <p class="hero__text">My Workflow differs from project to project but what stays the same is my approach. I try to understand the project and its needs and while doing so I determine the best tools to built it. <br><br> For one project I might go with Test Driven Development, Scrum Board, React, and Type Script and for another just a simple sketch on a paper and vanilla JS.</p>
         </div>
         <div class="hero__action">
-          <div class="hero__btn">
+          <div onclick="window.location='#projects'" class="hero__btn">
             <p class="hero__btn__p">To The Projects</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="projects">
+    <div id="projects" class="projects">
+      <h1 class="projects__title">Projects</h1>
       <div class="projects__row">
-        <PostCard :image="projectPicWordle" title="Wordle Game with Vue"></PostCard>
-        <PostCard :image="projectPicCafeLotte" title="Cafe lotte"></PostCard>
-        <PostCard :image="projectPicDDC" title="Dance School Website"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/Wordle-Game/" :image="projectPicWordle" title="Wordle Game with Vue"></PostCard>
+        <PostCard href="" :image="projectPicCafeLotte" title="Cafe lotte"></PostCard>
+        <PostCard href="" :image="projectPicDDC" title="Dance School Website"></PostCard>
       </div>
       <div class="projects__row">
-        <PostCard :image="projectPicEplodedView" title="Portfolio with Exploded View"></PostCard>
-        <PostCard :image="projectPicCurrency" title="Currency Converter with API + Dark Mode"></PostCard>
-        <PostCard :image="projectPicTODOs" title="TODOs App with Vanila JS"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/Exploded-View-Animation-Test-v2/" :image="projectPicEplodedView" title="Portfolio with Exploded View"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/Currency-Converter/" :image="projectPicCurrency" title="Currency Converter with API + Dark Mode"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/TODOs/" :image="projectPicTODOs" title="TODOs App with Vanila JS"></PostCard>
       </div>
       <div class="projects__row">
-        <PostCard :image="projectPicGalleryVJ" title="Gallery Website"></PostCard>
-        <PostCard :image="projectPicGalleryReact" title="Gallery Website with React"></PostCard>
+        <PostCard href="" :image="projectPicGalleryVJ" title="Gallery Website"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/gallery-website-react/" :image="projectPicGalleryReact" title="Gallery Website with React"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/playstation-website-clone/" :image="projectPicPS" title="Play Station Website Clone"></PostCard>
+      </div>
+      <div class="projects__row">
+        <PostCard href="https://barbodgarsha.github.io/Portfolio-v2/" :image="projectPicOldPortfolio" title="Personal Portfolio"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/simple-landing-page-dance-program/" :image="projectPicDPLP" title="Dance Program Landing Page"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/advice-generator-app-main/" :image="projectPicAdviceGen" title="Advice generator app"></PostCard>
+      </div>
+      <div class="projects__row">
+        <PostCard href="https://barbodgarsha.github.io/interactive-card-details-form-main/" :image="projectPicICDF" title="Interactive card details form"></PostCard>
+      </div>
+  
+      <h1 class="projects__title">Components</h1>
+      <div class="projects__row">
+        <PostCard href="https://barbodgarsha.github.io/interactive-rating-component-main/" :image="componentPicIR" title="Interactive rating component"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/fylo-data-storage-component-master/" :image="componentPicDS" title="Data Storage Display component"></PostCard>
+        <PostCard href="https://barbodgarsha.github.io/product-preview-card-component/" :image="componentPicProductPre" title="Product Preview Card component"></PostCard>
+      </div>
+      <div class="projects__row">
+        <PostCard href="https://barbodgarsha.github.io/pricing-component-with-toggle-master/" :image="componentPicPricing" title="Pricing with toggle component"></PostCard>
       </div>
     </div>
     
+    <Overlay>
+      <div class="project-info">
+        <img class="project-info__img" :src="projectPicAdviceGen" alt="">
+      </div>
+    </Overlay>
   </main>
 </template>
 
@@ -61,16 +100,13 @@ import projectPicTODOs from '@/assets/Projects/TODOs Screenshot.png'
   //RESETS
   html {
     box-sizing: border-box;
-    
+    scroll-behavior: smooth;
+
     font-family: 'Poppins', sans-serif;
   }
   ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
-  }
-  /* Optional: show position indicator in red */
-  ::-webkit-scrollbar-thumb {
-      background: #FF0000;
   }
 
   *, *:before, *:after {
@@ -194,6 +230,12 @@ import projectPicTODOs from '@/assets/Projects/TODOs Screenshot.png'
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+
+    .projects__title {
+      color: #EEEEEE;
+      padding: 1rem;
+    }
+
     .projects__row {  
       padding: 1rem 0;
       display: flex;
@@ -202,4 +244,17 @@ import projectPicTODOs from '@/assets/Projects/TODOs Screenshot.png'
     }
   }
 
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    .project-info__img {
+      width: 100%;
+      border-radius: 9px;
+    }
+  }
 </style>
