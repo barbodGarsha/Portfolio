@@ -12,9 +12,8 @@ const props = defineProps ({
     <header :class="['header', {'header--darkmode' : props.darkMode}]">
         <p class="header__title">Barbod <span class="header__title--accent-color">Garshasbi</span></p>
         <div class="header__nav">
-            <p class="header__nav__itm">About</p>
+            <a href="/Portfolio/src/assets/CV-Eng.pdf" class="header__nav__itm">CV</a>
             <p onclick="window.location='#projects'" class="header__nav__itm">Projects</p>
-            <p class="header__nav__itm">Contacts</p>
         </div>
     </header>
 </template>
