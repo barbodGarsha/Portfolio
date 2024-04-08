@@ -85,11 +85,6 @@ import componentPicPricing from '@/assets/Projects/pricing-component-with-toggle
       </div>
     </div>
     
-    <Overlay>
-      <div class="project-info">
-        <img class="project-info__img" :src="projectPicAdviceGen" alt="">
-      </div>
-    </Overlay>
   </main>
 </template>
 
